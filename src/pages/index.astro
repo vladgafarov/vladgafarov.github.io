@@ -3,6 +3,7 @@ import BaseHead from '../components/BaseHead.astro'
 import ThemeToggle from '../components/ThemeToggle.vue'
 import { SITE_DESCRIPTION, SITE_TITLE } from '../config'
 import { Image } from '@astrojs/image/components'
+import Nav from '../components/Nav.astro'
 
 const { pathname } = Astro.url
 ---
@@ -16,15 +17,7 @@ const { pathname } = Astro.url
 		<ThemeToggle client:only />
 
 		<header>
-			<nav class="dark:text-white text-black flex justify-center gap-16">
-				<a href="/" class:list={[{ ['text-primary']: pathname === '/' }]}
-					>Home</a
-				>
-
-				<a href="/blog" class:list={[{ active: pathname === '/blog' }]}
-					>Blog</a
-				>
-			</nav>
+			<Nav />
 		</header>
 
 		<Image

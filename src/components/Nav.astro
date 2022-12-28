@@ -1,0 +1,23 @@
+---
+const { pathname } = Astro.url
+
+const urls = [
+	{ url: '/', name: 'Home' },
+	{ url: '/blog', name: 'Blog' },
+]
+---
+
+<nav class="dark:text-white font-medium text-black flex justify-center gap-16">
+	{
+		urls.map(({ url, name }) => (
+			<a
+				href={url}
+				class:list={[
+					{ ['text-secondary dark:text-primary']: pathname === url },
+				]}
+			>
+				{name}
+			</a>
+		))
+	}
+</nav>
