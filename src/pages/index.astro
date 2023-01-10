@@ -4,13 +4,13 @@ import BaseHead from '../components/BaseHead.astro'
 import HeroImagesParallax from '../components/HeroImagesParallax.vue'
 import Nav from '../components/Nav.astro'
 import Skills from '../components/Skills.astro'
-import { SITE_DESCRIPTION, SITE_TITLE } from '../config'
+import { MAIN_PAGE_TITLE, SITE_DESCRIPTION } from '../config'
 ---
 
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<BaseHead title={MAIN_PAGE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body class="bg-white dark:bg-dark">
 		<header class="mt-6">
