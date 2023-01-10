@@ -10,8 +10,6 @@ const props = defineProps<{
 	rotate: number
 }>()
 
-const rotateClass = ref('rotate-[' + props.rotate + 'deg]')
-
 function handleMouseMove() {
 	const x1 = (window.innerWidth - x.value * props.position) / 700
 	const y1 = (window.innerWidth - y.value * props.position) / 700
@@ -29,9 +27,10 @@ watch(x, () => {
 	<div class="w-28 h-28" ref="elem1">
 		<img
 			:src="'/' + props.image"
-			class="transform"
-			:class="rotateClass"
 			alt="Vlad Gafarov"
+			:style="{
+				transform: `rotate(${props.rotate}deg)`,
+			}"
 		/>
 	</div>
 </template>
