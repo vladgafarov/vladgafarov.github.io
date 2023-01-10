@@ -18,6 +18,16 @@ module.exports = {
 				karla: ['Karla', ...defaultTheme.fontFamily.sans],
 			},
 		},
+		container: ({ theme }) => ({
+			center: true,
+			padding: '2rem',
+			screens: {
+				md: theme('screens.sm'),
+				lg: theme('screens.md'),
+				xl: theme('screens.lg'),
+				'2xl': theme('screens.xl'),
+			},
+		}),
 	},
 	plugins: [],
 }
