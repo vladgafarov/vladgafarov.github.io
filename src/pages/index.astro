@@ -1,11 +1,10 @@
 ---
-import BaseHead from '../components/BaseHead.astro'
-import ThemeToggle from '../components/ThemeToggle.vue'
-import { SITE_DESCRIPTION, SITE_TITLE } from '../config'
 import { Image } from '@astrojs/image/components'
+import BaseHead from '../components/BaseHead.astro'
+import HeroImagesParallax from '../components/HeroImagesParallax.vue'
 import Nav from '../components/Nav.astro'
-
-const { pathname } = Astro.url
+import Skills from '../components/Skills.astro'
+import { SITE_DESCRIPTION, SITE_TITLE } from '../config'
 ---
 
 <!DOCTYPE html>
@@ -14,18 +13,32 @@ const { pathname } = Astro.url
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body class="bg-white dark:bg-dark">
-		<ThemeToggle client:only />
-
-		<header>
+		<header class="mt-6">
 			<Nav />
 		</header>
 
-		<Image
-			src="/js-logo.png"
-			alt="valdgafarov"
-			width={245}
-			aspectRatio="1:1"
-			format={'webp'}
-		/>
+		<div
+			class="min-h-screen max-w-5xl mx-auto flex items-center flex-col justify-center lg:flex-row lg:justify-between px-8 relative"
+		>
+			<h1
+				class="text-5xl sm:leading-snug text-primary-darker dark:text-primary -mt-12"
+			>
+				Hi, I’m Vlad Gafarov <br /> Frontend developer
+			</h1>
+			<div class="-mt-12">
+				<Image
+					src="/js-logo.png"
+					alt="valdgafarov"
+					width={245}
+					aspectRatio="1:1"
+					format={'webp'}
+				/>
+			</div>
+			<HeroImagesParallax client:load />
+		</div>
+
+		<div class="max-w-5xl mx-auto px-8">
+			<Skills />
+		</div>
 	</body>
 </html>
