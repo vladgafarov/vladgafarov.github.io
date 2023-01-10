@@ -4,11 +4,12 @@ import BaseHead from '../components/BaseHead.astro'
 import HeroImagesParallax from '../components/HeroImagesParallax.vue'
 import Nav from '../components/Nav.astro'
 import Skills from '../components/Skills.astro'
+import ThemeToggle from '../components/ThemeToggle.vue'
 import { MAIN_PAGE_TITLE, SITE_DESCRIPTION } from '../config'
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 	<head>
 		<BaseHead title={MAIN_PAGE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
@@ -38,5 +39,9 @@ import { MAIN_PAGE_TITLE, SITE_DESCRIPTION } from '../config'
 		</div>
 
 		<Skills />
+
+		<div class="fixed bottom-3 left-3">
+			<ThemeToggle client:load />
+		</div>
 	</body>
 </html>
