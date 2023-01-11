@@ -3,6 +3,7 @@ import { Image } from '@astrojs/image/components'
 import BaseHead from '../components/BaseHead.astro'
 import HeroImagesParallax from '../components/HeroImagesParallax.vue'
 import Nav from '../components/Nav.astro'
+import Portfolio from '../components/Portfolio.astro'
 import Skills from '../components/Skills.astro'
 import ThemeToggle from '../components/ThemeToggle.vue'
 import { MAIN_PAGE_TITLE, SITE_DESCRIPTION } from '../config'
@@ -39,6 +40,7 @@ import { MAIN_PAGE_TITLE, SITE_DESCRIPTION } from '../config'
 		</div>
 
 		<Skills />
+		<Portfolio />
 
 		<ThemeToggle client:load />
 	</body>

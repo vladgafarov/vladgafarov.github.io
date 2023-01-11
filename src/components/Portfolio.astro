@@ -1,0 +1,46 @@
+---
+import { Image } from '@astrojs/image/components'
+import PortfolioItem from './PortfolioItem.astro'
+import SectionTitle from './SectionTitle.astro'
+---
+
+<div class="container py-8 mt-16">
+	<SectionTitle>Portfolio</SectionTitle>
+
+	<div class="grid grid-cols-11 gap-6 mt-8">
+		<PortfolioItem
+			title="Chat frontend"
+			github="https://github.com/vladgafarov/chat-frontend"
+			class="col-span-full lg:col-span-6"
+		>
+			<p slot="description">
+				Chat is a real-time application with video calls.
+			</p>
+			<p slot="stack">React/Remix, xstate, socket.io, webrtc</p>
+		</PortfolioItem>
+		<PortfolioItem
+			title="Courses"
+			github="https://github.com/vladgafarov/courses-fullstack"
+			class="col-span-full lg:col-span-5"
+		>
+			<p slot="stack">React/Next.js, Node.js/Nest.js, Prisma, graphql</p>
+			<p slot="description">
+				Courses is a platform for creating and selling courses.
+			</p>
+		</PortfolioItem>
+		<PortfolioItem
+			title="Chat backend"
+			github="https://github.com/vladgafarov/chat-backend"
+			class="col-span-full lg:col-span-5"
+		>
+			<p slot="stack">Node.js/Nest.js, Prisma, sqlite</p>
+		</PortfolioItem>
+		<PortfolioItem
+			title="Personal site"
+			github="https://github.com/vladgafarov/vladgafarov.github.io"
+			class="col-span-full lg:col-span-6"
+		>
+			<p slot="stack">Astro, Vue 3</p>
+		</PortfolioItem>
+	</div>
+</div>
