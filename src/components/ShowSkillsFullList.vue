@@ -54,18 +54,25 @@ function openModal() {
 							class="w-full max-w-xl transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all"
 						>
 							<DialogTitle class="text-xl flex justify-between">
-								<h3>Full list of skills</h3>
+								<h3>Full list of tech skills</h3>
 								<XMarkIcon
 									@click="closeModal"
 									class="w-5 h-5 text-black cursor-pointer"
 								/>
 							</DialogTitle>
 							<div class="mt-2">
-								<p class="text-sm text-gray-500">
-									Your payment has been successfully submitted. We’ve
-									sent you an email with all of the details of your
-									order.
-								</p>
+								<ul class="list-disc list-inside">
+									<li>HTML, CSS (sass/scss), JS (TypeScript)</li>
+									<li>React.js, Next.js, Remix, Redux</li>
+									<li>Vue, Nuxt.js</li>
+									<li>Jest, cypress</li>
+									<li>REST API, GraphQL, WebSocket (socket.io)</li>
+									<li>Git, Docker</li>
+									<li>Node.js, Nest.js, Prisma</li>
+									<li>PostgreSQL, SQLite, mongoDB</li>
+									<li>Python, C#</li>
+									<li>Pandas, numpy</li>
+								</ul>
 							</div>
 						</DialogPanel>
 					</TransitionChild>
