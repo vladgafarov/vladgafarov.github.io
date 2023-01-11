@@ -2,8 +2,8 @@
 import { Image } from '@astrojs/image/components'
 import BaseHead from '../components/BaseHead.astro'
 import GetInTouch from '../components/GetInTouch.astro'
+import Header from '../components/Header.astro'
 import HeroImagesParallax from '../components/HeroImagesParallax.vue'
-import Nav from '../components/Nav.astro'
 import Portfolio from '../components/Portfolio.astro'
 import Skills from '../components/Skills.astro'
 import ThemeToggle from '../components/ThemeToggle.vue'
@@ -16,9 +16,7 @@ import { MAIN_PAGE_TITLE, SITE_DESCRIPTION } from '../config'
 		<BaseHead title={MAIN_PAGE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body class="bg-white dark:bg-dark">
-		<header class="mt-6">
-			<Nav />
-		</header>
+		<Header />
 
 		<div
 			class="min-h-screen container flex items-center flex-col justify-center lg:flex-row lg:justify-between px-8 relative"
