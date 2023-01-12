@@ -10,7 +10,7 @@ const toggleDark = useToggle(isDark)
 
 <template>
 	<div class="fixed bottom-3 right-3">
-		<button @click="toggleDark()">
+		<button @click="toggleDark()" aria-label="Toggle Dark Mode">
 			<span class="text-primary-darker dark:text-primary">
 				<span v-if="isDark">
 					<SunIcon class="h-6 w-6" />
