@@ -6,7 +6,7 @@ import {
 	TransitionChild,
 	TransitionRoot,
 } from '@headlessui/vue'
-import { XMarkIcon } from '@heroicons/vue/24/outline'
+import { XMarkIcon } from '@heroicons/vue/24/outline/index.js'
 import { ref } from 'vue'
 
 const isOpen = ref(false)
