@@ -1,8 +1,8 @@
 ---
 import BaseHead from '../components/BaseHead.astro'
 import Header from '../components/Header.astro'
-import { SITE_TITLE, SITE_DESCRIPTION } from '../config'
 import ThemeToggle from '../components/ThemeToggle.vue'
+import { BLOG_PAGE_TITLE, SITE_DESCRIPTION } from '../config'
 
 const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
 	(a, b) =>
@@ -14,7 +14,7 @@ const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<BaseHead title={BLOG_PAGE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
 	<body class="bg-white dark:bg-dark">
 		<Header />
