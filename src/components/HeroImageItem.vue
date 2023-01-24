@@ -10,13 +10,13 @@ const props = defineProps<{
 	rotate: number
 }>()
 
-function handleMouseMove() {
-	const x1 = (window.innerWidth - x.value * props.position) / 700
-	const y1 = (window.innerWidth - y.value * props.position) / 700
+// function handleMouseMove() {
+// 	const x1 = (window.innerWidth - x.value * props.position) / 700
+// 	const y1 = (window.innerWidth - y.value * props.position) / 700
 
-	if (!elem1.value) return
-	elem1.value.style.transform = `translate(${x1}px, ${y1}px)`
-}
+// 	if (!elem1.value) return
+// 	elem1.value.style.transform = `translate(${x1}px, ${y1}px)`
+// }
 
 // watch(x, () => {
 // 	handleMouseMove()
@@ -29,7 +29,7 @@ function handleMouseMove() {
 			:src="'/' + props.image"
 			alt="Vlad Gafarov"
 			:style="{
-				transform: `rotate(${props.rotate}deg)`,
+				transform: `translateX(${props.position}rem) rotate(${props.rotate}deg)`,
 			}"
 		/>
 	</div>
