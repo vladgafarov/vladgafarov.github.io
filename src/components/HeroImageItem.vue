@@ -18,9 +18,9 @@ function handleMouseMove() {
 	elem1.value.style.transform = `translate(${x1}px, ${y1}px)`
 }
 
-watch(x, () => {
-	handleMouseMove()
-})
+// watch(x, () => {
+// 	handleMouseMove()
+// })
 </script>
 
 <template>
