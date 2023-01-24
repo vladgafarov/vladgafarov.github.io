@@ -4,7 +4,7 @@ import HeroImageItem from './HeroImageItem.vue'
 
 <template>
 	<div
-		class="hidden absolute top-1/2 h-[45%] -translate-y-1/2 transform inset-x-[10%] lg:flex justify-between pointer-events-none"
+		class="hidden absolute top-1/2 h-[65%] 2xl:h-[45%] -translate-y-1/2 transform inset-x-[10%] lg:flex justify-between pointer-events-none"
 	>
 		<div class="flex flex-col justify-between">
 			<HeroImageItem :position="-15" image="infinity.png" :rotate="-70" />
