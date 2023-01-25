@@ -1,12 +1,15 @@
 ---
+import { CollectionEntry } from 'astro:content'
+
 interface Props {
-	title: string
-	github?: string
-	website?: string
+	data: CollectionEntry<'portfolio'>['data']
 	class?: string
 }
 
-const { class: className, title, github, website } = Astro.props
+const {
+	class: className,
+	data: { description, stack, title, github, website },
+} = Astro.props
 ---
 
 <div
@@ -15,13 +18,13 @@ const { class: className, title, github, website } = Astro.props
 		'rounded-2xl bg-slate-200 dark:bg-[#2F2F37] text-black dark:text-white flex flex-row items-center overflow-hidden',
 	]}
 >
-	{
+	<!-- {
 		Astro.slots.has('image') && (
 			<div class="h-full aspect-square relative gradient-image">
 				<slot name="image" />
 			</div>
 		)
-	}
+	} -->
 	<div class="p-6">
 		<div class="flex gap-2 items-center">
 			<h2 class="text-2xl">{title}</h2>
@@ -78,11 +81,11 @@ const { class: className, title, github, website } = Astro.props
 				)
 			}
 		</div>
-		<div class="font-medium">
-			<slot name="stack" />
+		<div class="font-medium text-slate-500 dark:text-slate-400">
+			{stack.join(' • ')}
 		</div>
 		<div class="dark:text-slate-300">
-			<slot name="description" />
+			{description}
 		</div>
 		<slot />
 	</div>
