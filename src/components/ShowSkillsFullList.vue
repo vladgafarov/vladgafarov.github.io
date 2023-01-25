@@ -63,7 +63,9 @@ function openModal() {
 							<div class="mt-2">
 								<ul class="list-disc list-inside">
 									<li>HTML, CSS (sass/scss), JS (TypeScript)</li>
-									<li>React.js, Next.js, Remix, Redux</li>
+									<li>
+										React.js, Next.js, Remix, Redux, Zustand, Xstate
+									</li>
 									<li>Vue, Nuxt.js</li>
 									<li>Jest, cypress</li>
 									<li>REST API, GraphQL, WebSocket (socket.io)</li>
