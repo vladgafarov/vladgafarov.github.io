@@ -1,6 +1,8 @@
 {
-  "extends": "astro/tsconfigs/strict",
-  "compilerOptions": {
-    "jsx": "preserve"
-  }
+	"extends": "astro/tsconfigs/base",
+	"compilerOptions": {
+		"jsx": "preserve",
+		"strictNullChecks": true,
+		"types": ["@astrojs/image/client"]
+	}
 }
