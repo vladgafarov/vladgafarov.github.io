@@ -1,5 +1,5 @@
 ---
-import { Image } from '@astrojs/image/components'
+import { Picture } from '@astrojs/image/components'
 import BaseHead from '../components/BaseHead.astro'
 import GetInTouch from '../components/GetInTouch.astro'
 import Header from '../components/Header.astro'
@@ -7,7 +7,7 @@ import HeroImagesParallax from '../components/HeroImagesParallax.vue'
 import Portfolio from '../components/Portfolio.astro'
 import Skills from '../components/Skills.astro'
 import ThemeToggle from '../components/ThemeToggle.vue'
-import { MAIN_PAGE_TITLE, SITE_DESCRIPTION } from '../config'
+import { MAIN_PAGE_TITLE,SITE_DESCRIPTION } from '../config'
 ---
 
 <!DOCTYPE html>
@@ -27,11 +27,13 @@ import { MAIN_PAGE_TITLE, SITE_DESCRIPTION } from '../config'
 				Hi, I’m Vlad Gafarov <br /> Frontend developer
 			</h1>
 			<div class="lg:-mt-12">
-				<Image
+				<Picture
 					src="/js-logo.png"
 					alt="valdgafarov"
-					width={245}
-					height={245}
+					widths={[140, 180, 250]}
+					sizes="(max-width: 640px) 140px, (max-width: 768px) 180px, 250px"
+					background={'#fff'}
+					aspectRatio={'1:1'}
 					format={'webp'}
 				/>
 			</div>
