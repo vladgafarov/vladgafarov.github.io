@@ -8,6 +8,8 @@ const props = defineProps<{
 	position: number
 	image: string
 	rotate: number
+	width: number
+	height: number
 }>()
 
 // function handleMouseMove() {
@@ -27,6 +29,8 @@ const props = defineProps<{
 	<div class="w-28 h-28" ref="elem1">
 		<img
 			:src="'/' + props.image"
+			:width="props.width"
+			:height="props.height"
 			alt="Vlad Gafarov"
 			:style="{
 				transform: `translateX(${props.position}rem) rotate(${props.rotate}deg)`,
