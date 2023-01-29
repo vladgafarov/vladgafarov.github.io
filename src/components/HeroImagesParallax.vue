@@ -26,14 +26,14 @@ import HeroImageItem from './HeroImageItem.vue'
 			<HeroImageItem
 				:width="123"
 				:height="123"
-				:position="5"
+				:position="1"
 				image="react-logo.png"
 				:rotate="-10"
 			/>
 			<HeroImageItem
 				:width="120"
 				:height="120"
-				:position="-5"
+				:position="-9"
 				image="vue-logo.png"
 				:rotate="-14"
 			/>
