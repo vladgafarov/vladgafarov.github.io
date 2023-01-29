@@ -1,11 +1,11 @@
 ---
 import { Picture } from '@astrojs/image/components'
 import BaseHead from '../components/BaseHead.astro'
-import GetInTouch from '../components/GetInTouch.astro'
 import Header from '../components/Header.astro'
 import HeroImagesParallax from '../components/HeroImagesParallax.vue'
 import Portfolio from '../components/Portfolio.astro'
 import Skills from '../components/Skills.astro'
+import Social from '../components/Social.astro'
 import ThemeToggle from '../components/ThemeToggle.vue'
 import { MAIN_PAGE_TITLE, SITE_DESCRIPTION } from '../config'
 ---
@@ -43,7 +43,7 @@ import { MAIN_PAGE_TITLE, SITE_DESCRIPTION } from '../config'
 
 		<Skills />
 		<Portfolio />
-		<GetInTouch />
+		<Social />
 
 		<ThemeToggle client:load />
 	</body>
