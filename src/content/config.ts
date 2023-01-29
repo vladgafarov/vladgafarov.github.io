@@ -8,6 +8,7 @@ const portfolioCollection = defineCollection({
 		stack: z.array(z.string()),
 		github: z.string().optional(),
 		website: z.string().optional(),
+		image: z.string().optional(),
 	}),
 })
 
