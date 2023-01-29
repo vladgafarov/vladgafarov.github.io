@@ -4,5 +4,5 @@ description: 'My site, where you can find my skills, projects, and contact infor
 stack: ['Astro', 'Vue 3']
 github: 'https://github.com/vladgafarov/vladgafarov.github.io'
 website: 'https://vladgafarov.github.io'
-image: '/astro-logo.svg'
+image: '/astro-logo.png'
 ---
