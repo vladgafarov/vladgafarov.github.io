@@ -42,6 +42,6 @@ const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
 				}
 			</section>
 		</main>
-		<ThemeToggle client:only />
+		<ThemeToggle client:only='vue' />
 	</body>
 </html>
