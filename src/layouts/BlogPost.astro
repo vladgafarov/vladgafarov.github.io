@@ -1,20 +1,15 @@
 ---
+import { CollectionEntry } from 'astro:content'
 import BaseHead from '../components/BaseHead.astro'
 import Header from '../components/Header.astro'
 import ThemeToggle from '../components/ThemeToggle.vue'
 
-export interface Props {
-	content: {
-		title: string
-		description: string
-		pubDate?: string
-		updatedDate?: string
-		heroImage?: string
-	}
+interface Props {
+	post: CollectionEntry<'blog'>['data']
 }
 
 const {
-	content: { title, description, pubDate, updatedDate, heroImage },
+	post: {title, heroImage, description, pubDate},
 } = Astro.props
 ---
 
@@ -34,13 +29,6 @@ const {
 				}
 				<h1 class="title">{title}</h1>
 				{pubDate && <time>{pubDate}</time>}
-				{
-					updatedDate && (
-						<div>
-							Last updated on <time>{updatedDate}</time>
-						</div>
-					)
-				}
 				<hr />
 				<slot />
 			</article>

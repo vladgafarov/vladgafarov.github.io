@@ -1,7 +1,34 @@
 declare module 'astro:content' {
+	interface Render {
+		'.mdx': Promise<{
+			Content: import('astro').MarkdownInstance<{}>['Content'];
+			headings: import('astro').MarkdownHeading[];
+			remarkPluginFrontmatter: Record<string, any>;
+		}>;
+	}
+}
+
+declare module 'astro:content' {
+	interface Render {
+		'.md': Promise<{
+			Content: import('astro').MarkdownInstance<{}>['Content'];
+			headings: import('astro').MarkdownHeading[];
+			remarkPluginFrontmatter: Record<string, any>;
+		}>;
+	}
+}
+
+declare module 'astro:content' {
 	export { z } from 'astro/zod';
 	export type CollectionEntry<C extends keyof typeof entryMap> =
-		(typeof entryMap)[C][keyof (typeof entryMap)[C]] & Render;
+		(typeof entryMap)[C][keyof (typeof entryMap)[C]];
+
+	export const image: () => import('astro/zod').ZodObject<{
+		src: import('astro/zod').ZodString;
+		width: import('astro/zod').ZodNumber;
+		height: import('astro/zod').ZodNumber;
+		format: import('astro/zod').ZodString;
+	}>;
 
 	type BaseSchemaWithoutEffects =
 		| import('astro/zod').AnyZodObject
@@ -44,53 +71,65 @@ declare module 'astro:content' {
 	): E extends ValidEntrySlug<C>
 		? Promise<CollectionEntry<C>>
 		: Promise<CollectionEntry<C> | undefined>;
+	export function getCollection<C extends keyof typeof entryMap, E extends CollectionEntry<C>>(
+		collection: C,
+		filter?: (entry: CollectionEntry<C>) => entry is E
+	): Promise<E[]>;
 	export function getCollection<C extends keyof typeof entryMap>(
 		collection: C,
-		filter?: (data: CollectionEntry<C>) => boolean
+		filter?: (entry: CollectionEntry<C>) => unknown
 	): Promise<CollectionEntry<C>[]>;
 
 	type InferEntrySchema<C extends keyof typeof entryMap> = import('astro/zod').infer<
 		Required<ContentConfig['collections'][C]>['schema']
 	>;
 
-	type Render = {
-		render(): Promise<{
-			Content: import('astro').MarkdownInstance<{}>['Content'];
-			headings: import('astro').MarkdownHeading[];
-			remarkPluginFrontmatter: Record<string, any>;
-		}>;
-	};
-
 	const entryMap: {
-		"portfolio": {
+		"blog": {
+"markdown-style-guide.md": {
+  id: "markdown-style-guide.md",
+  slug: "markdown-style-guide",
+  body: string,
+  collection: "blog",
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".md"] },
+"using-mdx.mdx": {
+  id: "using-mdx.mdx",
+  slug: "using-mdx",
+  body: string,
+  collection: "blog",
+  data: InferEntrySchema<"blog">
+} & { render(): Render[".mdx"] },
+},
+"portfolio": {
 "!chat-frontend.md": {
   id: "!chat-frontend.md",
   slug: "chat-frontend",
   body: string,
   collection: "portfolio",
   data: InferEntrySchema<"portfolio">
-},
+} & { render(): Render[".md"] },
 "chat-backend.md": {
   id: "chat-backend.md",
   slug: "chat-backend",
   body: string,
   collection: "portfolio",
   data: InferEntrySchema<"portfolio">
-},
+} & { render(): Render[".md"] },
 "courses.md": {
   id: "courses.md",
   slug: "courses",
   body: string,
   collection: "portfolio",
   data: InferEntrySchema<"portfolio">
-},
+} & { render(): Render[".md"] },
 "personal-site.md": {
   id: "personal-site.md",
   slug: "personal-site",
   body: string,
   collection: "portfolio",
   data: InferEntrySchema<"portfolio">
-},
+} & { render(): Render[".md"] },
 },
 
 	};
