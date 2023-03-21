@@ -2,8 +2,8 @@
 const { pathname } = Astro.url
 
 const urls = [
-	{ url: '/', name: 'Home' },
-	{ url: '/blog', name: 'Blog' },
+	{ url: '', name: 'Home' },
+	{ url: 'blog', name: 'Blog' },
 ]
 ---
 
@@ -13,9 +13,9 @@ const urls = [
 	{
 		urls.map(({ url, name }) => (
 			<a
-				href={url}
+				href={`/${url}`}
 				class:list={[
-					{ ['text-secondary dark:text-primary']: pathname === url },
+					{ ['text-secondary dark:text-primary']: pathname.split('/')[1] === url },
 				]}
 			>
 				{name}
