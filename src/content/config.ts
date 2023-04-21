@@ -5,7 +5,8 @@ const blogCollection = defineCollection({
 		title: z.string(),
 		description: z.string(),
 		pubDate: z.string(),
-		heroImage: z.string().optional()
+		heroImage: z.string().optional(),
+		draft: z.boolean().optional().default(false),
 	}),
 })
 const portfolioCollection = defineCollection({

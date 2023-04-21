@@ -5,7 +5,9 @@ import Header from '../components/Header.astro'
 import ThemeToggle from '../components/ThemeToggle.vue'
 import { BLOG_PAGE_TITLE, SITE_DESCRIPTION } from '../config'
 
-const posts = await getCollection('blog')
+const posts = await getCollection('blog', ({ data }) => {
+	return data.draft !== true
+})
 ---
 
 <!DOCTYPE html>
@@ -39,6 +41,6 @@ const posts = await getCollection('blog')
 				}
 			</section>
 		</main>
-		<ThemeToggle client:only='vue' />
+		<ThemeToggle client:only="vue" />
 	</body>
 </html>
