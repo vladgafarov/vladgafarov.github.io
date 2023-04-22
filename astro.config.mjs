@@ -8,15 +8,7 @@ import { defineConfig } from 'astro/config'
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://vladgafarov.github.io/',
-	integrations: [
-		mdx(),
-		sitemap(),
-		tailwind(),
-		vue(),
-		image({
-			serviceEntryPoint: '@astrojs/image/sharp',
-		}),
-	],
+	integrations: [mdx(), sitemap(), tailwind(), vue(), image()],
 	markdown: {
 		shikiConfig: {
 			theme: 'dracula',
