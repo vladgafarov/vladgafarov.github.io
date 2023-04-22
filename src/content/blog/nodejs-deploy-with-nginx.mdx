@@ -2,9 +2,11 @@
 title: 'Node.js App deploying on VPS with nginx'
 description: 'Step by step guide'
 pubDate: 'Apr 21 2023'
-draft: true
 # heroImage: '/placeholder-hero.jpg'
 ---
+
+{/* import CodeBlock from '../../components/CodeBlock.astro' */}
+{/* export const components = { code: CodeBlock } */}
 
 Similar to this [guide](https://gist.github.com/bradtraversy/cd90d1ed3c462fe3bddd11bf8953a896)
 
@@ -66,4 +68,48 @@ Similar to this [guide](https://gist.github.com/bradtraversy/cd90d1ed3c462fe3bdd
    sudo service nginx restart
    ```
 
-6. Start node.js via pm2
+6. Start node.js via pm2 (or docker, etc.)
+   ![pm2](/pm2.png)
+7. Setup SSL via LetsEncrypt
+
+   ```bash
+   sudo add-apt-repository ppa:certbot/certbot
+   sudo apt-get update
+   sudo apt-get install python-certbot-nginx
+   sudo certbot --nginx -d yourdomain.com -d www.yourdomain.com
+
+   # Only valid for 90 days, test the renewal process with
+   certbot renew --dry-run
+   ```
+
+### For subdomain
+
+8. Create A record in DNS for subdomain
+   ![subdomain](/subdomain.png)
+9. Create conf in `/etc/nginx/sites-available`
+
+   ```bash
+   cd /etc/nginx/sites-available
+   sudo nano sub.yourdomain.com
+   ```
+
+   sub.yourdomain.com
+
+   ```bash
+   server_name sub.yourdomain.com www.sub.yourdomain.com;
+
+   location / {
+      proxy_pass http://localhost:5000; #whatever port your app runs on
+      proxy_http_version 1.1;
+      proxy_set_header Upgrade $http_upgrade;
+      proxy_set_header Connection 'upgrade';
+      proxy_set_header Host $host;
+      proxy_cache_bypass $http_upgrade;
+   }
+   ```
+
+   Create symbolic link
+
+   ```bash
+   sudo ln -s /etc/nginx/sites-available/sub.yourdomain.com /etc/nginx/sites-enabled/
+   ```

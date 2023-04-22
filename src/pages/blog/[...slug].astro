@@ -1,19 +1,22 @@
 ---
-import { CollectionEntry, getCollection } from "astro:content"
-import BlogPost from "../../layouts/BlogPost.astro"
+import { CollectionEntry, getCollection } from 'astro:content'
+import BlogPost from '../../layouts/BlogPost.astro'
 
 export async function getStaticPaths() {
-   const blogEntries = await getCollection("blog")
-   return blogEntries.map((entry) => ({
-      params: { slug: entry.slug },
-      props: { entry },
-   }))
+	const blogEntries = await getCollection('blog')
+	return blogEntries.map(entry => ({
+		params: { slug: entry.slug },
+		props: { entry },
+	}))
 }
 
+interface Props {
+	entry: CollectionEntry<'blog'>
+}
 const { entry } = Astro.props
 const { Content } = await entry.render()
 ---
 
-<BlogPost post={entry.data as CollectionEntry<"blog">['data']}>
-   <Content />
+<BlogPost post={entry.data}>
+	<Content />
 </BlogPost>

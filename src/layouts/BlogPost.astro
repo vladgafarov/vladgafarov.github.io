@@ -9,7 +9,7 @@ interface Props {
 }
 
 const {
-	post: {title, heroImage, description, pubDate},
+	post: { title, heroImage, description, pubDate },
 } = Astro.props
 ---
 
@@ -24,7 +24,12 @@ const {
 			<article class="my-8 px-4 md:px-0 prose dark:prose-invert mx-auto">
 				{
 					heroImage && (
-						<img width={720} height={360} src={heroImage} alt="" />
+						<img
+							width={720}
+							height={360}
+							src={heroImage}
+							alt={`${title} - Blog post by Vlad Gafarov`}
+						/>
 					)
 				}
 				<h1 class="title">{title}</h1>
@@ -33,6 +38,6 @@ const {
 				<slot />
 			</article>
 		</main>
-		<ThemeToggle client:only='vue' />
+		<ThemeToggle client:only="vue" />
 	</body>
 </html>
