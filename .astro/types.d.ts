@@ -119,13 +119,13 @@ declare module 'astro:content' {
   collection: "blog",
   data: InferEntrySchema<"blog">
 } & { render(): Render[".md"] },
-"nodejs-deploy-with-nginx.md": {
-  id: "nodejs-deploy-with-nginx.md",
+"nodejs-deploy-with-nginx.mdx": {
+  id: "nodejs-deploy-with-nginx.mdx",
   slug: "nodejs-deploy-with-nginx",
   body: string,
   collection: "blog",
   data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] },
+} & { render(): Render[".mdx"] },
 "using-mdx.mdx": {
   id: "using-mdx.mdx",
   slug: "using-mdx",

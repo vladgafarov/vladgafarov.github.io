@@ -1,9 +1,13 @@
 ---
 import { getCollection } from 'astro:content'
+import { getPortfolio } from '../utils/queries/getPortfolio'
 import PortfolioItem from './PortfolioItem.astro'
 import SectionTitle from './SectionTitle.astro'
 
 const portfolio = await getCollection('portfolio')
+
+const data = await getPortfolio()
+console.log(data)
 ---
 
 <section class="container py-8 mt-16">
