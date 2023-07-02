@@ -1,22 +1,22 @@
 ---
-import { getCollection } from 'astro:content'
-import PortfolioItem from './PortfolioItem.astro'
-import SectionTitle from './SectionTitle.astro'
+import { getCollection } from "astro:content";
+import PortfolioItem from "./PortfolioItem.astro";
+import SectionTitle from "./SectionTitle.astro";
 
-const portfolio = await getCollection('portfolio')
+const portfolio = await getCollection("portfolio");
 ---
 
 <section class="container py-8 mt-16">
-	<SectionTitle>Portfolio</SectionTitle>
+   <SectionTitle>Portfolio</SectionTitle>
 
-	<div class="grid grid-cols-11 gap-6 mt-8">
-		{
-			portfolio.map(entry => (
-				<PortfolioItem
-					class="col-span-full lg:col-span-6 lg:[&:nth-child(4n+2)]:col-span-5 lg:[&:nth-child(4n+2)+div]:col-span-5"
-					data={entry.data}
-				/>
-			))
-		}
-	</div>
+   <div class="grid grid-cols-11 gap-6 mt-8">
+      {
+         portfolio.map((entry) => (
+            <PortfolioItem
+               class="col-span-full lg:col-span-6 lg:[&:nth-child(4n+2)]:col-span-5 lg:[&:nth-child(4n+2)+div]:col-span-5"
+               data={entry.data}
+            />
+         ))
+      }
+   </div>
 </section>

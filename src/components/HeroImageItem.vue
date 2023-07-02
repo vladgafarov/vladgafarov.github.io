@@ -1,16 +1,16 @@
 <script setup lang="ts">
-import { useMouse } from '@vueuse/core'
-import { ref, watch } from 'vue'
+import { useMouse } from "@vueuse/core";
+import { ref, watch } from "vue";
 
-const { x, y } = useMouse({ touch: false })
-const elem1 = ref<HTMLElement>()
+const { x, y } = useMouse({ touch: false });
+const elem1 = ref<HTMLElement>();
 const props = defineProps<{
-	position: number
-	image: string
-	rotate: number
-	width: number
-	height: number
-}>()
+   position: number;
+   image: string;
+   rotate: number;
+   width: number;
+   height: number;
+}>();
 
 // function handleMouseMove() {
 // 	const x1 = (window.innerWidth - x.value * props.position) / 700
@@ -26,15 +26,15 @@ const props = defineProps<{
 </script>
 
 <template>
-	<div class="w-28 h-28" ref="elem1">
-		<img
-			:src="'/' + props.image"
-			:width="props.width"
-			:height="props.height"
-			alt="Vlad Gafarov"
-			:style="{
-				transform: `translateX(${props.position}rem) rotate(${props.rotate}deg)`,
-			}"
-		/>
-	</div>
+   <div class="w-28 h-28" ref="elem1">
+      <img
+         :src="'/' + props.image"
+         :width="props.width"
+         :height="props.height"
+         alt="Vlad Gafarov"
+         :style="{
+            transform: `translateX(${props.position}rem) rotate(${props.rotate}deg)`,
+         }"
+      />
+   </div>
 </template>

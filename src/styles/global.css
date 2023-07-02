@@ -1,82 +1,82 @@
 @font-face {
-	font-family: 'Karla';
-	src: url('/fonts/Karla-Regular.woff2') format('woff2'),
-		url('/fonts/Karla-Regular.woff') format('woff');
-	font-weight: normal;
-	font-style: normal;
-	font-display: swap;
+   font-family: "Karla";
+   src: url("/fonts/Karla-Regular.woff2") format("woff2"),
+      url("/fonts/Karla-Regular.woff") format("woff");
+   font-weight: normal;
+   font-style: normal;
+   font-display: swap;
 }
 
 @font-face {
-	font-family: 'Montserrat';
-	src: url('/fonts/Montserrat-Black.woff2') format('woff2'),
-		url('/fonts/Montserrat-Black.woff') format('woff');
-	font-weight: 900;
-	font-style: normal;
-	font-display: swap;
+   font-family: "Montserrat";
+   src: url("/fonts/Montserrat-Black.woff2") format("woff2"),
+      url("/fonts/Montserrat-Black.woff") format("woff");
+   font-weight: 900;
+   font-style: normal;
+   font-display: swap;
 }
 
 @font-face {
-	font-family: 'Montserrat';
-	src: url('/fonts/Montserrat-Regular.woff2') format('woff2'),
-		url('/fonts/Montserrat-Regular.woff') format('woff');
-	font-weight: normal;
-	font-style: normal;
-	font-display: swap;
+   font-family: "Montserrat";
+   src: url("/fonts/Montserrat-Regular.woff2") format("woff2"),
+      url("/fonts/Montserrat-Regular.woff") format("woff");
+   font-weight: normal;
+   font-style: normal;
+   font-display: swap;
 }
 
 @font-face {
-	font-family: 'Karla';
-	src: url('/fonts/Karla-Medium.woff2') format('woff2'),
-		url('/fonts/Karla-Medium.woff') format('woff');
-	font-weight: 500;
-	font-style: normal;
-	font-display: swap;
+   font-family: "Karla";
+   src: url("/fonts/Karla-Medium.woff2") format("woff2"),
+      url("/fonts/Karla-Medium.woff") format("woff");
+   font-weight: 500;
+   font-style: normal;
+   font-display: swap;
 }
 
 @font-face {
-	font-family: 'Montserrat';
-	src: url('/fonts/Montserrat-Medium.woff2') format('woff2'),
-		url('/fonts/Montserrat-Medium.woff') format('woff');
-	font-weight: 500;
-	font-style: normal;
-	font-display: swap;
+   font-family: "Montserrat";
+   src: url("/fonts/Montserrat-Medium.woff2") format("woff2"),
+      url("/fonts/Montserrat-Medium.woff") format("woff");
+   font-weight: 500;
+   font-style: normal;
+   font-display: swap;
 }
 
 @font-face {
-	font-family: 'Karla';
-	src: url('/fonts/Karla-Bold.woff2') format('woff2'),
-		url('/fonts/Karla-Bold.woff') format('woff');
-	font-weight: bold;
-	font-style: normal;
-	font-display: swap;
+   font-family: "Karla";
+   src: url("/fonts/Karla-Bold.woff2") format("woff2"),
+      url("/fonts/Karla-Bold.woff") format("woff");
+   font-weight: bold;
+   font-style: normal;
+   font-display: swap;
 }
 
 @font-face {
-	font-family: 'Karla';
-	src: url('/fonts/Karla-SemiBold.woff2') format('woff2'),
-		url('/fonts/Karla-SemiBold.woff') format('woff');
-	font-weight: 600;
-	font-style: normal;
-	font-display: swap;
+   font-family: "Karla";
+   src: url("/fonts/Karla-SemiBold.woff2") format("woff2"),
+      url("/fonts/Karla-SemiBold.woff") format("woff");
+   font-weight: 600;
+   font-style: normal;
+   font-display: swap;
 }
 
 @font-face {
-	font-family: 'Montserrat';
-	src: url('/fonts/Montserrat-Bold.woff2') format('woff2'),
-		url('/fonts/Montserrat-Bold.woff') format('woff');
-	font-weight: bold;
-	font-style: normal;
-	font-display: swap;
+   font-family: "Montserrat";
+   src: url("/fonts/Montserrat-Bold.woff2") format("woff2"),
+      url("/fonts/Montserrat-Bold.woff") format("woff");
+   font-weight: bold;
+   font-style: normal;
+   font-display: swap;
 }
 
 @font-face {
-	font-family: 'Montserrat';
-	src: url('/fonts/Montserrat-SemiBold.woff2') format('woff2'),
-		url('/fonts/Montserrat-SemiBold.woff') format('woff');
-	font-weight: 600;
-	font-style: normal;
-	font-display: swap;
+   font-family: "Montserrat";
+   src: url("/fonts/Montserrat-SemiBold.woff2") format("woff2"),
+      url("/fonts/Montserrat-SemiBold.woff") format("woff");
+   font-weight: 600;
+   font-style: normal;
+   font-display: swap;
 }
 
 h1,
@@ -85,12 +85,12 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: 'Montserrat', sans-serif;
-	font-weight: bold;
+   font-family: "Montserrat", sans-serif;
+   font-weight: bold;
 }
 
 .cover-image {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
 }

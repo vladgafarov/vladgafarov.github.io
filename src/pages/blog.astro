@@ -1,46 +1,46 @@
 ---
-import { getCollection } from 'astro:content'
-import BaseHead from '../components/BaseHead.astro'
-import Header from '../components/Header.astro'
-import ThemeToggle from '../components/ThemeToggle.vue'
-import { BLOG_PAGE_TITLE, SITE_DESCRIPTION } from '../config'
+import { getCollection } from "astro:content";
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import ThemeToggle from "../components/ThemeToggle.vue";
+import { BLOG_PAGE_TITLE, SITE_DESCRIPTION } from "../config";
 
-const posts = await getCollection('blog', ({ data }) => {
-	return data.draft !== true
-})
+const posts = await getCollection("blog", ({ data }) => {
+   return data.draft !== true;
+});
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<BaseHead title={BLOG_PAGE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body class="bg-white dark:bg-dark">
-		<Header />
-		<main>
-			<section class="container mt-8">
-				{
-					posts.map(post => (
-						<div class="bg-slate-100 dark:bg-[#2F2F37] rounded p-6 mb-5 text-black dark:text-white">
-							<h1 class="text-xl hover:underline decoration-secondary dark:decoration-primary">
-								<a href={`/blog/${post.slug}`}>{post.data.title}</a>
-							</h1>
-							<time datetime={post.data.pubDate}>
-								{new Date(post.data.pubDate).toLocaleDateString(
-									'en-us',
-									{
-										year: 'numeric',
-										month: 'short',
-										day: 'numeric',
-									}
-								)}
-							</time>
-							<p>{post.data.description}</p>
-						</div>
-					))
-				}
-			</section>
-		</main>
-		<ThemeToggle client:only="vue" />
-	</body>
+   <head>
+      <BaseHead title={BLOG_PAGE_TITLE} description={SITE_DESCRIPTION} />
+   </head>
+   <body class="bg-white dark:bg-dark">
+      <Header />
+      <main>
+         <section class="container mt-8">
+            {
+               posts.map((post) => (
+                  <div class="bg-slate-100 dark:bg-[#2F2F37] rounded p-6 mb-5 text-black dark:text-white">
+                     <h1 class="text-xl hover:underline decoration-secondary dark:decoration-primary">
+                        <a href={`/blog/${post.slug}`}>{post.data.title}</a>
+                     </h1>
+                     <time datetime={post.data.pubDate}>
+                        {new Date(post.data.pubDate).toLocaleDateString(
+                           "en-us",
+                           {
+                              year: "numeric",
+                              month: "short",
+                              day: "numeric",
+                           }
+                        )}
+                     </time>
+                     <p>{post.data.description}</p>
+                  </div>
+               ))
+            }
+         </section>
+      </main>
+      <ThemeToggle client:only="vue" />
+   </body>
 </html>

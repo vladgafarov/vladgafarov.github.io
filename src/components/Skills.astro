@@ -1,58 +1,57 @@
 ---
-import SectionTitle from './SectionTitle.astro'
-import ShowSkillsFullList from './ShowSkillsFullList.vue'
+import SectionTitle from "./SectionTitle.astro";
+import ShowSkillsFullList from "./ShowSkillsFullList.vue";
 ---
 
 <section class="container">
-	<SectionTitle>Skills</SectionTitle>
+   <SectionTitle>Skills</SectionTitle>
 
-	<div class="flex flex-col sm:flex-row gap-10 justify-between py-8">
-		<div
-			class="text-dark dark:text-white bg-slate-200 dark:bg-[#2F2F37] p-6 rounded-2xl"
-		>
-			<h2 class="text-2xl font-semibold">Frontend</h2>
-			<ul class="list-disc list-inside pl-2 py-3">
-				<li>React.js, Next.js, Remix</li>
-				<li>Vue, Nuxt.js</li>
-				<li>Jest, cypress</li>
-			</ul>
-			<p>To learn:</p>
-			<ul class="list-disc list-inside pl-2">
-				<li>Playwright</li>
-				<li>Storybook</li>
-			</ul>
-		</div>
-		<div class="flex flex-col items-center justify-center">
-			<div
-				class="text-dark dark:text-white bg-slate-200 dark:bg-[#2F2F37] p-2 rounded-xl text-center"
-			>
-				Typescript
-			</div>
-			<div
-				class="text-dark dark:text-white bg-slate-200 dark:bg-[#2F2F37] p-2 rounded-xl mt-4 text-center"
-			>
-				<p>Rest api</p>
-				<p>Graphql</p>
-				<p>WebSockets (socket.io)</p>
-				<p>To learn: grpc</p>
-			</div>
-		</div>
-		<div
-			class="text-dark dark:text-white bg-slate-200 dark:bg-[#2F2F37] p-6 rounded-2xl"
-		>
-			<h2 class="text-2xl font-semibold">Backend</h2>
-			<ul class="list-disc list-inside pl-2 py-3">
-				<li>Node.js, Nest.js</li>
-				<li>Prisma ORM</li>
-				<li>Postgresql, sqlite, mongodb</li>
-			</ul>
-			<p>To learn:</p>
-			<ul class="list-disc list-inside pl-2">
-				<li>microservices</li>
-				<li>rabbitmq</li>
-			</ul>
-		</div>
-	</div>
+   <div class="flex flex-col sm:flex-row gap-10 justify-between py-8">
+      <div
+         class="text-dark dark:text-white bg-slate-200 dark:bg-[#2F2F37] p-6 rounded-2xl"
+      >
+         <h2 class="text-2xl font-semibold">Frontend</h2>
+         <ul class="list-disc list-inside pl-2 py-3">
+            <li>React.js, Next.js, Remix</li>
+            <li>Vue, Nuxt.js</li>
+            <li>Jest, cypress</li>
+            <li>Storybook</li>
+         </ul>
+         <p>To learn:</p>
+         <ul class="list-disc list-inside pl-2">
+            <li>Playwright</li>
+         </ul>
+      </div>
+      <div class="flex flex-col items-center justify-center">
+         <div
+            class="text-dark dark:text-white bg-slate-200 dark:bg-[#2F2F37] p-2 rounded-xl text-center"
+         >
+            Typescript
+         </div>
+         <div
+            class="text-dark dark:text-white bg-slate-200 dark:bg-[#2F2F37] p-2 rounded-xl mt-4 text-center"
+         >
+            <p>Rest api</p>
+            <p>Graphql</p>
+            <p>WebSockets (socket.io)</p>
+            <p>To learn: grpc</p>
+         </div>
+      </div>
+      <div
+         class="text-dark dark:text-white bg-slate-200 dark:bg-[#2F2F37] p-6 rounded-2xl"
+      >
+         <h2 class="text-2xl font-semibold">Backend</h2>
+         <ul class="list-disc list-inside pl-2 py-3">
+            <li>Node.js, Nest.js</li>
+            <li>Prisma ORM</li>
+         </ul>
+         <p>To learn:</p>
+         <ul class="list-disc list-inside pl-2">
+            <li>microservices</li>
+            <li>rabbitmq</li>
+         </ul>
+      </div>
+   </div>
 
-	<ShowSkillsFullList client:only />
+   <ShowSkillsFullList client:only />
 </section>

@@ -1,50 +1,50 @@
 ---
-import { Picture } from '@astrojs/image/components'
-import BaseHead from '../components/BaseHead.astro'
-import Header from '../components/Header.astro'
-import HeroImagesParallax from '../components/HeroImagesParallax.vue'
-import Portfolio from '../components/Portfolio.astro'
-import Skills from '../components/Skills.astro'
-import Social from '../components/Social.astro'
-import ThemeToggle from '../components/ThemeToggle.vue'
-import { MAIN_PAGE_TITLE, SITE_DESCRIPTION } from '../config'
+import { Picture } from "@astrojs/image/components";
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import HeroImagesParallax from "../components/HeroImagesParallax.vue";
+import Portfolio from "../components/Portfolio.astro";
+import Skills from "../components/Skills.astro";
+import Social from "../components/Social.astro";
+import ThemeToggle from "../components/ThemeToggle.vue";
+import { MAIN_PAGE_TITLE, SITE_DESCRIPTION } from "../config";
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<BaseHead title={MAIN_PAGE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body class="bg-white dark:bg-dark">
-		<Header />
+   <head>
+      <BaseHead title={MAIN_PAGE_TITLE} description={SITE_DESCRIPTION} />
+   </head>
+   <body class="bg-white dark:bg-dark">
+      <Header />
 
-		<div
-			class="min-h-screen container flex items-center flex-col justify-center lg:flex-row lg:justify-between px-8 relative"
-		>
-			<h1
-				class="text-3xl sm:text-5xl sm:leading-snug text-primary-darker dark:text-primary lg:-mt-12"
-			>
-				Hi, I’m Vlad Gafarov <br /> Frontend developer
-			</h1>
-			<div class="lg:-mt-12">
-				<Picture
-					src="/js-logo-radial.png"
-					alt="vladgafarov"
-					widths={[240, 300, 452]}
-					sizes="(max-width: 640px) 240px, (max-width: 768px) 300px, 452px"
-					aspectRatio={'1:1'}
-					format={'webp'}
-					background={'#fff'}
-					loading={'eager'}
-				/>
-			</div>
-			<HeroImagesParallax client:load />
-		</div>
+      <div
+         class="min-h-screen container flex items-center flex-col justify-center lg:flex-row lg:justify-between px-8 relative"
+      >
+         <h1
+            class="font-montserrat font-bold text-3xl sm:text-5xl sm:leading-snug text-primary-darker dark:text-primary lg:-mt-12"
+         >
+            Hi, I’m Vlad Gafarov <br /> Frontend developer
+         </h1>
+         <div class="lg:-mt-12">
+            <Picture
+               src="/js-logo-radial.png"
+               alt="vladgafarov"
+               widths={[240, 300, 452]}
+               sizes="(max-width: 640px) 240px, (max-width: 768px) 300px, 452px"
+               aspectRatio={"1:1"}
+               format={"webp"}
+               background={"#fff"}
+               loading={"eager"}
+            />
+         </div>
+         <HeroImagesParallax client:load />
+      </div>
 
-		<Skills />
-		<Portfolio />
-		<Social />
+      <Skills />
+      <Portfolio />
+      <Social />
 
-		<ThemeToggle client:only='vue' />
-	</body>
+      <ThemeToggle client:only="vue" />
+   </body>
 </html>
