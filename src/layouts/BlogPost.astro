@@ -1,5 +1,6 @@
 ---
-import { CollectionEntry } from "astro:content";
+import { Image } from "astro:assets";
+import { type CollectionEntry } from "astro:content";
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import ThemeToggle from "../components/ThemeToggle.vue";
@@ -24,16 +25,24 @@ const {
          <article class="my-8 px-4 md:px-0 prose dark:prose-invert mx-auto">
             {
                heroImage && (
-                  <img
+                  <Image
+                     src={heroImage}
                      width={720}
                      height={360}
-                     src={heroImage}
                      alt={`${title} - Blog post by Vlad Gafarov`}
                   />
                )
             }
             <h1 class="title">{title}</h1>
-            {pubDate && <time>{pubDate}</time>}
+            {pubDate && <time datetime={pubDate.toISOString()}>
+               {pubDate.toLocaleDateString(
+                  "en-us",
+                  {
+                     year: "numeric",
+                     month: "short",
+                     day: "numeric",
+                  }
+               )}</time>}
             <hr />
             <slot />
          </article>

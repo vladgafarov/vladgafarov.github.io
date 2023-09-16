@@ -1,5 +1,5 @@
 ---
-import { Image } from "@astrojs/image/components";
+import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 import GithubIcon from "./Icons/GithubIcon.astro";
 import LinkIcon from "./Icons/LinkIcon.astro";
@@ -29,7 +29,6 @@ const {
                width={150}
                height={150}
                alt="Vlad Gafarov Frontend"
-               format="webp"
             />
          </div>
       )

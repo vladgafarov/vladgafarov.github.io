@@ -1,0 +1,53 @@
+---
+import { Image } from "astro:assets";
+import cubeImage from "../assets/cube.png";
+import infinityImage from "../assets/infinity.png";
+import reactImage from "../assets/react-logo.png";
+import vueImage from "../assets/vue-logo.png";
+---
+
+<div
+class="hidden absolute top-1/2 h-[50%] 2xl:h-[45%] -translate-y-1/2 transform inset-x-[10%] lg:flex justify-between pointer-events-none"
+>
+<div class="flex flex-col justify-between">
+   <Image
+      src={infinityImage}
+      width="68"
+      height="68"
+      alt="Vlad Gafarov"
+      style={{
+         transform: `translateX(${-3}rem) rotate(${-70}deg)`,
+      }}
+   />
+   <Image
+      src={cubeImage}
+      width="63"
+      height="63"
+      alt="Vlad Gafarov"
+      style={{
+         transform: `translateX(${3}rem) rotate(${15}deg)`,
+      }}
+   />
+</div>
+<div class="flex flex-col justify-between">
+  
+   <Image
+      src={reactImage}
+      width="123"
+      height="123"
+      alt="Vlad Gafarov"
+      style={{
+         transform: `translateX(${1}rem) rotate(${-10}deg)`,
+      }}
+   />
+  <Image
+   src={vueImage}
+   width="120"
+   height="120"
+   alt="Vlad Gafarov"
+   style={{
+      transform: `translateX(${-9}rem) rotate(${-14}deg)`,
+   }}
+/>
+</div>
+</div>

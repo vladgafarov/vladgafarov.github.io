@@ -1,8 +1,7 @@
 ---
 title: "Node.js App deploying on VPS with nginx"
 description: "Step by step guide"
-pubDate: "Apr 21 2023"
-# heroImage: '/placeholder-hero.jpg'
+pubDate: 2023-04-21
 ---
 
 {/* import CodeBlock from '../../components/CodeBlock.astro' */}
@@ -69,7 +68,7 @@ Similar to this [guide](https://gist.github.com/bradtraversy/cd90d1ed3c462fe3bdd
    ```
 
 6. Start node.js via pm2 (or docker, etc.)
-   ![pm2](/pm2.png)
+   ![pm2](../../assets/pm2.png)
 7. Setup SSL via LetsEncrypt
 
    ```bash
@@ -85,7 +84,7 @@ Similar to this [guide](https://gist.github.com/bradtraversy/cd90d1ed3c462fe3bdd
 ### For subdomain
 
 8. Create A record in DNS for subdomain
-   ![subdomain](/subdomain.png)
+   ![subdomain](../../assets/subdomain.png)
 9. Create conf in `/etc/nginx/sites-available`
 
    ```bash
